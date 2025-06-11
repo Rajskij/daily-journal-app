@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/history">History</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <form action="submit">
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="mood">Your mood</label>
+                <select name="mood" id="moods" class="form-control">
+                    <option value="Happy">😊 Happy</option>
+                    <option value="Neutral">😐 Neutral</option>
+                    <option value="Sad">😢 Sad</option>
+                    <option value="Productive">🚀 Productive</option>
+                    <option value="Calm">🧘 Calm</option>
+                </select>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="wether">Wether</label>
+                <select name="wether" id="wether" class="form-control">
+                    <option value=""></option>
+                </select>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="date">Date</label>
+                <input id="date" type="date" class="form-control">
+            </div>
+        </div>
+        <fieldset>
+            <label>Tags:</label>
+            <!-- Row with 3 columns (lg) that collapses to 1 column (sm) -->
+            <div class="row">
+                <!-- Column 1 -->
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="tag1" value="tag1">
+                        <label class="form-check-label" for="tag1">Tag 1</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="tag2" value="tag2">
+                        <label class="form-check-label" for="tag2">Tag 2</label>
+                    </div>
+                    <!-- Repeat 5-6 more checkboxes -->
+                </div>
+
+                <!-- Column 2 -->
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="tag8" value="tag8">
+                        <label class="form-check-label" for="tag8">Tag 8</label>
+                    </div>
+                    <!-- More checkboxes... -->
+                </div>
+
+                <!-- Column 3 -->
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="tag15" value="tag15">
+                        <label class="form-check-label" for="tag15">Tag 15</label>
+                    </div>
+                    <!-- More checkboxes... -->
+                </div>
+            </div>
+        </fieldset>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Your Note</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"  placeholder="type your note"></textarea>
+        </div>
+        <button type="submit" class="btn btn-secondary">Submit</button>
+    </form>
+</body>
+
+</html>
