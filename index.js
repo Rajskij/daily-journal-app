@@ -11,10 +11,9 @@ app.set('view engine', 'ejs');
 app.listen('3000');
 
 // middleware for get access to styles
-app.use(express.static('styles'));
+app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// app.use(express.static('data'));
 
 app.get('/', (req, res) => {
     res.redirect('/home');
@@ -25,11 +24,6 @@ app.use('/users', user);
 
 app.get('/history', (req, res) => {
     res.render('history');
-});
-
-app.post('/sendData', (req, res) => {
-    console.log(req.body);
-    res.redirect('/');
 });
 
 app.get('/tags', (req, res) => {

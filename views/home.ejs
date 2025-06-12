@@ -2,8 +2,8 @@
     <%- include('./partial/head.ejs', { pageName: 'Home' }) %>
 
 <body>
-    <%- include('./partial/nav.ejs')%>
-    <form action="/sendData" method="post">
+    <%- include('./partial/nav.ejs', { page: 'home' })%>
+    <form action="/home" method="post">
         <div class="form-group mt-4">
                 <label for="mood"><h5>Select User</h5></label>
                 <select name="mood" id="moods" class="form-control">

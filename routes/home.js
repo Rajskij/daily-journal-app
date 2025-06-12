@@ -11,11 +11,12 @@ routes
             moodOptions,
             weatherOptions,
             users: db.users,
-            tags : db.tags
+            tags: db.tags
         });
     })
     .post((req, res) => {
-
+        console.log(req.body);
+        res.redirect('/home');
     });
 
 export { routes };
