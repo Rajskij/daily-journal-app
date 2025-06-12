@@ -1,5 +1,6 @@
 import express from 'express';
-import { moodOptions, weatherOptions, activityTags } from './data/form-data.js'
+import { routes as home } from './routes/home.js';
+import { routes as user } from './routes/users.js';
 
 const app = express();
 
@@ -16,22 +17,11 @@ app.use(express.json());
 // app.use(express.static('data'));
 
 app.get('/', (req, res) => {
-    res.render('home', {
-        moodOptions,
-        weatherOptions,
-        activityTags,
-        pageName : 'Home',
-        names: [
-            { name: 'Bob' },
-            { name: 'Bobby' }
-        ]
-    });
-    // res.send('Hello');
+    res.redirect('/home');
 });
 
-app.get('/about', (req, res) => {
-    res.render('about');
-});
+app.use('/home', home);
+app.use('/users', user);
 
 app.get('/history', (req, res) => {
     res.render('history');
@@ -39,8 +29,14 @@ app.get('/history', (req, res) => {
 
 app.post('/sendData', (req, res) => {
     console.log(req.body);
-    console.log(req.params);
-    console.log(req.query);
-
     res.redirect('/');
+});
+
+app.get('/tags', (req, res) => {
+    res.render('tags');
+})
+
+app.use((err, req, res, next) => {
+    res.status(err.status | 500);
+    res.json({ error: err.message });
 });
