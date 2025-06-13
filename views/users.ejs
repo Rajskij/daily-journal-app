@@ -3,8 +3,9 @@
 <%- include('./partial/head.ejs', { pageName : 'About'}) %>
     <body>
         <%- include('./partial/nav.ejs', { page: 'users'})%>
-        <div class="container mt-4">
+        <div id="container" class="container mt-4">
             <h3>Create User</h3>
+            <hr>
             <form action="/users" method="post">
                 <div class="form-row">
                     <div class="form-group col-md-4">
@@ -18,8 +19,7 @@
                 </div>
                 <button type="submit" class="btn btn-secondary">Create</button>
             </form>
-            <hr>
-            <h3>Users</h3>
+            <h3 class="mt-5">Users</h3>
             <div class="table-responsive">
                 <table class="table table-hover">
                     <thead class="table">
@@ -36,7 +36,7 @@
                                 <td><%= user.id %></td>
                                 <td><%= user.name %></td>
                                 <td><%= user.email %></td>
-                                <td>
+                                <td class="col-md-2">
                                     <button class="btn btn-sm delete-btn" name="users" data-id="<%= user.id %>">
                                         <i class="bi bi-trash"></i> DELETE
                                     </button>

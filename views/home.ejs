@@ -5,6 +5,8 @@
 <body>
     <%- include('./partial/nav.ejs', { page: 'home' })%>
     <form action="/home" method="post">
+        <h3 class="mt-4">Create Note</h3>
+        <hr>
         <div class="form-group mt-4">
             <label for="user"><h5>Select User</h5></label>
             <select name="userId" id="user" class="form-control">
@@ -43,7 +45,7 @@
             <label for="textarea"><h5>Your Note</h5></label>
             <textarea name="note" class="form-control" id="textarea" rows="3"  placeholder="type your note"></textarea>
         </div>
-        <button type="submit" class="btn btn-secondary">Submit</button>
+        <button type="submit" class="btn btn-secondary mb-5">Submit</button>
     </form>
 </body>
 </html>

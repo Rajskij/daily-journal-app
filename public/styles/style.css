@@ -13,3 +13,7 @@ nav {
 form {
     width: 60vw;
 }
+
+#container {
+    width: 60%;
+}

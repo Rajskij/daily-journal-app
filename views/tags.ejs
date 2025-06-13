@@ -3,8 +3,9 @@
     <%- include('./partial/head.ejs', { pageName : 'About'}) %>
     <body>
         <%- include('./partial/nav.ejs', { page: 'tags'})%>
-        <div class="container mt-4">
+        <div id="container" class="container mt-4">
             <h3>Create Tags</h3>
+            <hr>
             <form action="/tags" method="post">
                 <div class="form-row">
                     <div class="form-group col-md-4">
@@ -24,9 +25,9 @@
                 </div>
                 <button type="submit" class="btn btn-secondary">Add</button>
             </form>
-            <hr>
-            <h3>Tags</h3>
-            <table class="table table-hover">
+            <!-- <hr> -->
+            <h3 class="mt-5">Tags</h3>
+            <table id="table-sm" class="table table-hover">
                 <thead class="table">
                     <tr>
                         <th>Id</th>
@@ -41,7 +42,7 @@
                             <td><%= tag.id %></td>
                             <td><%= tag.name %></td>
                             <td><%= tag.emoji %></td>
-                            <td><button class="btn btn-sm delete-btn" name="tags" data-id="<%= tag.id %>">
+                            <td class="col-md-2"><button class="btn btn-sm delete-btn" name="tags" data-id="<%= tag.id %>">
                                     <i class="bi bi-trash"></i> DELETE
                                 </button></td>
                         </tr>
