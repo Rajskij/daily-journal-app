@@ -21,3 +21,39 @@
     "serverless-http": "^3.2.0"
   }
 }
+
+
+├── data/ (directory)
+│   ├── db.js (file)
+│   └── form-data.js (file)
+├── netlify/
+│   └── functions/
+│       └── server.js (file)
+├── node_modules/ (directory)
+├── public/ (directory)
+│   └── styles/
+│       └── style.css (file)
+│   └── handler/ (directory)
+│       ├── deleteHandler.js (file)
+│       └── updateHandler.js (file)
+├── routes/
+│   ├── history.js (file)
+│   ├── home.js (file)
+│   ├── tags.js (file)
+│   └── users.js (file)
+├── views/
+│   ├── partial/
+│   │   ├── head.ejs (file)
+│   │   ├── modal-data.ejs (file)
+│   │   ├── nav.ejs (file)
+│   │   └── tags.ejs (file)
+│   ├── history.ejs (file)
+│   ├── home.ejs (file)
+│   ├── tags.ejs (file)
+│   └── users.ejs (file)
+├── .gitignore (file)
+├── index.js (file)
+├── netlify.toml (file)
+├── package-lock.json (file)
+├── package.json (file)
+└── README.md (file)
