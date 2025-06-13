@@ -1,9 +1,9 @@
 import express, {Router} from 'express'
 import serverless from 'serverless-http'
-import { routes as home } from './routes/home.js';
-import { routes as user } from './routes/users.js';
-import { routes as tags } from './routes/tags.js';
-import { routes as history } from './routes/history.js';
+import { routes as home } from '../../routes/home.js';
+import { routes as user } from '../../routes/users.js';
+import { routes as tags } from '../../routes/tags.js';
+import { routes as history } from '../../routes/history.js';
 
 const app = express()
 
