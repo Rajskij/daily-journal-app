@@ -1,8 +1,16 @@
+[build]
+  command = "mkdir -p ./dist/"
+  publish = "./dist/"
 [functions]
-  external_node_modules = ["express", "ejs"]
+  external_node_modules = [
+    "ejs",
+    "express"
+  ]
+  included_files = [
+    "./views/**/*"
+  ]
   node_bundler = "esbuild"
 [[redirects]]
-  force = true
   from = "/*"
   status = 200
-  to = "/.netlify/functions/:splat"
+  to = "/.netlify/functions/server/:splat"
