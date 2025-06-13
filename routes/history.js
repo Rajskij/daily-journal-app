@@ -48,4 +48,15 @@ routes
         res.redirect('/history');
     });
 
+routes
+    .route('/:id')
+    .delete((req, res) => {
+        const id = req.params.id;
+        const rmEntry = moodHistory.find(entry => entry.id == id);
+        const index = moodHistory.indexOf(rmEntry);
+        moodHistory.splice(index, 1);
+
+        res.redirect('/history');
+    })
+
 export { routes };
