@@ -33,7 +33,6 @@ routes
                 moodEntries.splice(i, 1);
             }
         }
-
         res.redirect('/users');
     });
 

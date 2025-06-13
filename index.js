@@ -7,12 +7,12 @@ import { routes as history } from './routes/history.js';
 const app = express();
 
 // register view engine
-// by default it looks for views in views folder
 app.set('view engine', 'ejs');
 
 app.listen('3000');
 
-// middleware for get access to styles
+// middleware for get access to styles 
+// and event handlers for DELETE and PUT
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

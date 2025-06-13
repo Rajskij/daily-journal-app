@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
     <%- include('./partial/head.ejs', { pageName : 'About'}) %>
     <body>
@@ -8,29 +9,28 @@
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="mood"><h5>Mood</h5></label>
-                        <input name="mood" class="form-control" id="mood" placeholder="Enter mood"></textarea>
+                        <input name="mood" class="form-control" id="mood" placeholder="Enter activity"></textarea>
                     </div>
                     <div class="form-group col-md-2">
                         <label for="emoji">
                             <h5>Emoji</h5>
                         </label>
                         <select name="emoji" id="emoji" class="form-control">
-                            <% tags.forEach(tag=> { %>
-                                <option value=<%=tag.emoji %>><%= tag.emoji %></option>
+                            <% emojis.forEach(emoji=> { %>
+                                <option value="<%= emoji %>"><%= emoji %></option>
                             <% }) %>
                         </select>
                     </div>
                 </div>
                 <button type="submit" class="btn btn-secondary">Add</button>
             </form>
-            <label class="mt-4">
-                <h3>Tags</h3>
-            </label>
+            <hr>
+            <h3>Tags</h3>
             <table class="table table-hover">
                 <thead class="table">
                     <tr>
                         <th>Id</th>
-                        <th>Mood</th>
+                        <th>Activity</th>
                         <th>Emoji</th>
                         <th>Action</th>
                     </tr>

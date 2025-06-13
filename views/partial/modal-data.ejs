@@ -1,11 +1,10 @@
-<!-- Form data -->
 <form action="/home" method="post">
     <div class="form-group">
         <h5 id="username">User: </h5>
     </div>
     <div class="form-row">
         <div class="form-group col-md-4">
-            <label for="mood">
+            <label for="moods">
                 <h5>Your mood</h5>
             </label>
             <select name="mood" id="moods" class="form-control">
@@ -25,22 +24,20 @@
             </select>
         </div>
         <div class="form-group col-md-4">
-            <label for="date">
+            <label for="dateInput">
                 <h5>Date</h5>
             </label>
             <input id="dateInput" type="date" name="date" class="form-control" value="2024-05-25">
         </div>
     </div>
     <fieldset>
-        <label>
-            <h5>Tags</h5>
-        </label>
+        <h5>Tags</h5>
         <%- include('tags.ejs', { tags }); %>
     </fieldset>
     <div class="form-group mt-3">
         <label for="note">
             <h5>Your Note</h5>
         </label>
-        <textarea name="note" class="form-control" id="note" rows="3" placeholder="type your note"></textarea>
+        <textarea name="note" class="form-control" id="note" rows="3" placeholder="type your note" autocomplete="note"></textarea>
     </div>
 </form>

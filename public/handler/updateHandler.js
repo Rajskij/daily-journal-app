@@ -37,7 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     editForm.addEventListener('submit', async function (event) {
         event.preventDefault();
-        console.log("-- Form submission started --");
 
         // Extract values
         const user = document.getElementById('username');
@@ -50,14 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // Extract checked tags
         const checkedTags = Array.from(document.querySelectorAll('input[name="tags"]:checked'))
             .map(tagCheckbox => tagCheckbox.id);
-
-        // Debug output
-        console.log('Mood:', mood);
-        console.log('Emoji Mood', emojiMood);
-        console.log('Weather:', weather);
-        console.log('Date:', date);
-        console.log('Note:', note);
-        console.log('Tags:', checkedTags);
 
         try {
             const response = await fetch(`/history/update`, {

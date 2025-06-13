@@ -17,7 +17,6 @@ routes
             tags
         });
     })
-
     .post((req, res) => {
         const body = req.body;
         const userTags = body.tags;

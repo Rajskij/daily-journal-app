@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
     <%- include('./partial/head.ejs', { pageName : 'History'}) %>
 <body>
@@ -10,7 +11,7 @@
                     <label for="username">
                         <h5>Users</h5>
                     </label>
-                    <select name="userId" id="username" class="form-control">
+                    <select name="userId" id="username" class="form-control" autocomplete="username">
                         <option value="">All Users</option>
                         <% users.forEach(user=> { %>
                             <option value=<%=user.id %>><%= user.name %></option>
@@ -20,9 +21,10 @@
             </div>
             <button type="submit" class="btn btn-secondary">Filter</button>
         </form>
+        <hr>
         <h2>Journal Entries</h2>
         <div class="table-responsive">
-            <table class="table table-hover">
+            <table class="table table-hover table-responsive">
                 <thead class="table">
                     <tr>
                         <th>Date</th>
@@ -45,8 +47,8 @@
                         <% }); %>
                         </td>
                         <td><%= val.note %></td>
-                        <td>
-                            <button class="btn btn-sm me-2 edit-btn" 
+                        <td class="col-md-2">
+                            <button class="btn btn-sm me-2 edit-btn mt-1" 
                                     data-bs-toggle="modal" 
                                     data-bs-target="#edit-usr-modal"
                                     <%  const currentUser = users.find(user => user.id === val.userId);
@@ -61,7 +63,7 @@
                                     data-tags="<%= JSON.stringify(val.tags) %>">
                                 <i class="bi bi-pencil-square"></i> EDIT
                             </button>
-                            <button class="btn btn-sm delete-btn" data-id="<%= val.id %>" name="history">
+                            <button class="btn btn-sm delete-btn mt-1" data-id="<%= val.id %>" name="history">
                                 <i class="bi bi-trash"></i> DELETE
                             </button>
                         </td>
@@ -80,13 +82,13 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                            <div class="modal-body">
-                                <%- include('./partial/modal-data.ejs', { moods, weathers, tags }) %>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="submit" id="update-btn" class="btn btn-primary">Save changes</button>
-                            </div>
+                        <div class="modal-body">
+                            <%- include('./partial/modal-data.ejs', { moods, weathers, tags }) %>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" id="update-btn" class="btn btn-primary">Save changes</button>
+                        </div>
                     </div>
                 </div>
             </div>

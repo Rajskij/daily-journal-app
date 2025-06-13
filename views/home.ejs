@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
     <%- include('./partial/head.ejs', { pageName: 'Home' }) %>
 
@@ -5,16 +6,16 @@
     <%- include('./partial/nav.ejs', { page: 'home' })%>
     <form action="/home" method="post">
         <div class="form-group mt-4">
-                <label for="mood"><h5>Select User</h5></label>
-                <select name="userId" id="user" class="form-control">
-                    <% users.forEach(user => { %>
-                        <option value=<%= user.id %>><%= user.name %></option>
-                    <% }) %>
-                </select>
+            <label for="user"><h5>Select User</h5></label>
+            <select name="userId" id="user" class="form-control">
+                <% users.forEach(user => { %>
+                    <option value=<%= user.id %>><%= user.name %></option>
+                <% }) %>
+            </select>
         </div>
         <div class="form-row">
             <div class="form-group col-md-4">
-                <label for="mood"><h5>Your mood</h5></label>
+                <label for="moods"><h5>Your mood</h5></label>
                 <select name="mood" id="moods" class="form-control">
                     <% moodOptions.forEach(mood => { %>
                         <option value="<%= mood.label %>"><%= mood.label %></option>
@@ -35,7 +36,7 @@
             </div>
         </div>
         <fieldset>
-           <label><h5>Tags</h5></label>
+           <h5>Tags</h5>
            <%- include('./partial/tags.ejs', { tags }); %>
         </fieldset>
         <div class="form-group mt-3">

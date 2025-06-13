@@ -11,13 +11,12 @@ routes
     .get((req, res) => {
         const query = req.query;
         let history = moodHistory;
-        console.log('-------------------------')
-        history.forEach(h => console.log(h.userId + " " + h.note))
+
         if (query && query.userId) {
             const userId = query.userId;
             history = moodHistory.filter(val => val.userId == userId);
         }
-        
+
         res.render('history', {
             users,
             history,

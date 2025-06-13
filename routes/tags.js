@@ -1,5 +1,6 @@
 import express from 'express';
 import { db } from '../data/db.js';
+import { emojis } from '../data/form-data.js';
 
 const routes = express.Router();
 const tags = db.tags;
@@ -7,7 +8,7 @@ const tags = db.tags;
 routes
     .route('/')
     .get((req, res) => {
-        res.render('tags', { tags: db.tags });
+        res.render('tags', { tags: db.tags, emojis });
     })
     .post((req, res) => {
         console.log(req.body);
