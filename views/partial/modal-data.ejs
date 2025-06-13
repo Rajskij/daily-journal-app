@@ -15,10 +15,10 @@
             </select>
         </div>
         <div class="form-group col-md-4">
-            <label for="wether">
+            <label for="weather">
                 <h5>Wether</h5>
             </label>
-            <select name="wether" id="wether" class="form-control">
+            <select name="weather" id="weather" class="form-control">
                 <% weathers.forEach(weather => { %>
                     <option value="<%= weather.value %>" id="<%= weather.value %>"><%= weather.label %></option>
                 <% }) %>
