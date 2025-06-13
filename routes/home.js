@@ -1,6 +1,6 @@
 import express from 'express';
 import { db } from '../data/db.js';
-import { moodOptions, weatherOptions, activityTags } from '../data/form-data.js'
+import { moodOptions, weatherOptions } from '../data/form-data.js'
 
 const routes = express.Router();
 

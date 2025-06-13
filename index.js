@@ -2,6 +2,7 @@ import express from 'express';
 import { routes as home } from './routes/home.js';
 import { routes as user } from './routes/users.js';
 import { routes as tags } from './routes/tags.js';
+import { routes as history } from './routes/history.js';
 
 const app = express();
 
@@ -23,10 +24,7 @@ app.get('/', (req, res) => {
 app.use('/home', home);
 app.use('/users', user);
 app.use('/tags', tags);
-
-app.get('/history', (req, res) => {
-    res.render('history');
-});
+app.use('/history', history);
 
 app.use((err, req, res, next) => {
     res.status(err.status | 500);
