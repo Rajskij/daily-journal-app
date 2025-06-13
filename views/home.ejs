@@ -6,7 +6,7 @@
     <form action="/home" method="post">
         <div class="form-group mt-4">
                 <label for="mood"><h5>Select User</h5></label>
-                <select name="mood" id="moods" class="form-control">
+                <select name="userId" id="user" class="form-control">
                     <% users.forEach(user => { %>
                         <option value=<%= user.id %>><%= user.name %></option>
                     <% }) %>
@@ -17,7 +17,7 @@
                 <label for="mood"><h5>Your mood</h5></label>
                 <select name="mood" id="moods" class="form-control">
                     <% moodOptions.forEach(mood => { %>
-                        <option value=<%= mood.value %>><%= mood.label %></option>
+                        <option value="<%= mood.label %>"><%= mood.label %></option>
                     <% }) %>
                 </select>
             </div>

@@ -49,8 +49,9 @@
                             <button class="btn btn-sm me-2 edit-btn" 
                                     data-bs-toggle="modal" 
                                     data-bs-target="#edit-usr-modal"
-                                    <% const currentUser = users.find(user => user.id === val.userId); %>
-                                    data-username="<%= currentUser.name %>"
+                                    <%  const currentUser = users.find(user => user.id === val.userId);
+                                        const username = currentUser?.name | ""; %>
+                                    data-username="<%= username %>"
                                     data-id="<%= val.id %>"
                                     data-user-id="<%= val.userId %>"
                                     data-date="<%= val.date %>"
@@ -92,7 +93,7 @@
             </form>
         </div>
     </div>
-    <script src="/handler/eventHandler.js"></script>
+    <script src="/handler/deleteHandler.js"></script>
+    <script src="/handler/updateHandler.js"></script>
 </body>
-
 </html>

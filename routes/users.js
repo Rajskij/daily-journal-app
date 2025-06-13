@@ -3,6 +3,7 @@ import { db } from '../data/db.js';
 
 const routes = express.Router();
 const users = db.users;
+const moodEntries = db.moodEntries;
 
 routes
     .route('/')
@@ -26,7 +27,13 @@ routes
         const index = users.indexOf(rmUser);
         users.splice(index, 1);
 
-        console.log(users);
+        for (let i = moodEntries.length - 1; i >= 0; i--) {
+            console.log(id, " ", moodEntries[i].userId)
+            if (moodEntries[i].userId == id) {
+                moodEntries.splice(i, 1);
+            }
+        }
+
         res.redirect('/users');
     });
 
