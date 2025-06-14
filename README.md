@@ -2,8 +2,8 @@
 
 A simple full-stack Express.js + EJS web app for tracking user mood entries. Built without a database — data is stored in-memory for demonstration purposes.
 
-# Live Demo: 
-<a href="https://daily-journal-tracker.netlify.app/">Daily Journal App</a> 
+# Live Demo
+<a href="https://daily-journal-app-6ww9.onrender.com/">Daily Journal App</a> 
 
 ## 🚀 Features
 
