@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .map(tagCheckbox => tagCheckbox.id);
 
         try {
-            const response = await fetch(`/history/update`, {
+            const response = await fetch(`/history`, {
                 method: 'PUT',
                 body: JSON.stringify({
                     id: user.getAttribute('entryId'),

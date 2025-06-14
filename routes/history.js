@@ -24,10 +24,7 @@ routes
             weathers,
             tags: db.tags
         });
-    });
-
-routes
-    .route('/update')
+    })
     .put((req, res) => {
         const body = req.body;
         const id = body.id;
@@ -45,7 +42,7 @@ routes
             note: body.note
         };
 
-        res.redirect('/history');
+        res.status(204).end();
     });
 
 routes
@@ -56,7 +53,7 @@ routes
         const index = moodHistory.indexOf(rmEntry);
         moodHistory.splice(index, 1);
 
-        res.redirect('/history');
+        res.status(204).end();
     })
 
 export { routes };

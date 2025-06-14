@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     userDeleteBtn.forEach(btn => {
         btn.addEventListener('click', async event => {
+            event.preventDefault();
             event.stopPropagation();
             const dltBtn = event.target.closest('button');
             const id = dltBtn.getAttribute('data-id');

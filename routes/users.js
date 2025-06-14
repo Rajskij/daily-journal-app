@@ -5,6 +5,22 @@ const routes = express.Router();
 const users = db.users;
 const moodEntries = db.moodEntries;
 
+routes        
+    .route('/:id')
+    .delete((req, res) => {
+        const id = req.params.id;
+        const rmUser = users.find(user => user.id == id);
+        const index = users.indexOf(rmUser);
+        users.splice(index, 1);
+
+        for (let i = moodEntries.length - 1; i >= 0; i--) {
+            if (moodEntries[i].userId == id) {
+                moodEntries.splice(i, 1);
+            }
+        }
+        res.status(204).end();
+    });
+
 routes
     .route('/')
     .get((req, res) => {
@@ -16,24 +32,9 @@ routes
             name: req.body.name,
             email: req.body.email
         })
-        res.redirect('/users');
+        res.status(204).redirect('/users');
     });
 
-routes        
-    .route('/:id')
-    .delete((req, res) => {
-        const id = req.params.id;
-        const rmUser = users.find(user => user.id == id);
-        const index = users.indexOf(rmUser);
-        users.splice(index, 1);
 
-        for (let i = moodEntries.length - 1; i >= 0; i--) {
-            console.log(id, " ", moodEntries[i].userId)
-            if (moodEntries[i].userId == id) {
-                moodEntries.splice(i, 1);
-            }
-        }
-        res.redirect('/users');
-    });
 
 export { routes };

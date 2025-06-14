@@ -43,7 +43,7 @@ routes
             note: body.note
         });
 
-        res.redirect('/home');
+        res.status(204).redirect('/home');
     });
 
 export { routes };
